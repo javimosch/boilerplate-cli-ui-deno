@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI UI</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons from CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 -translate-x-full lg:translate-x-0">
+            <div class="flex flex-col h-full">
+                <!-- Logo -->
+                <div class="px-6 py-5 border-b border-gray-200">
+                    <h1 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+                        <i data-lucide="terminal" class="w-5 h-5 text-indigo-600"></i>
+                        CLI UI
+                    </h1>
+                    <p class="text-xs text-gray-500 mt-1">Go + Node.js</p>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="flex-1 px-4 py-4 space-y-1" id="nav-container"></nav>
+                
+                <!-- Footer -->
+                <div class="px-4 py-4 border-t border-gray-200">
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <div class="w-2 h-2 rounded-full bg-green-500 pulse-dot"></div>
+                        <span>Server Running</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Mobile overlay -->
+        <div id="sidebar-overlay" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden" onclick="closeSidebar()"></div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+            <!-- Mobile Header -->
+            <header class="lg:hidden bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+                <button onclick="openSidebar()" class="text-gray-600 hover:text-gray-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <span class="font-semibold text-gray-900">CLI UI</span>
+                <div class="w-6"></div>
+            </header>
+            
+            <!-- Page Content -->
+            <main class="flex-1 p-6 overflow-auto" id="page-content"></main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

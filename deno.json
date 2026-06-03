@@ -1,0 +1,12 @@
+{
+  "name": "boilerplate-cli-ui-deno",
+  "version": "1.0.0",
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --allow-write --allow-env src/cli.ts",
+    "dev:ui": "deno run --allow-net --allow-read --allow-write --allow-env src/cli.ts --ui",
+    "build": "deno run --allow-all build.ts"
+  },
+  "compilerOptions": {
+    "strict": true
+  }
+}

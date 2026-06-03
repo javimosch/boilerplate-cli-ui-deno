@@ -1,0 +1,5 @@
+dist/
+*.json
+!deno.json
+!package.json
+.cliui-config.json
