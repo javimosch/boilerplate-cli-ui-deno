@@ -4,3 +4,4 @@ dist/
 !package.json
 .cliui-config.json
 boilerplate-cli-ui-deno
+src/ui_gen.ts
