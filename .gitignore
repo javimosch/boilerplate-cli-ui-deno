@@ -3,3 +3,4 @@ dist/
 !deno.json
 !package.json
 .cliui-config.json
+boilerplate-cli-ui-deno
